@@ -8,3 +8,7 @@ const burgerButton = document.querySelector('[data-collapse-toggle="navbar-defau
     // Basculez la classe 'hidden' pour afficher ou masquer le menu
     menu.classList.toggle('hidden');
   });
+
+  Elixir(function(mix) {
+    mix.html('storage/framework/views/*', 'storage/framework/views/', {collapseWhitespace: true, removeAttributeQuotes: true, removeComments: true, minifyJS: true});
+});
