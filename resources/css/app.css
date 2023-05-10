@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,9 +12,15 @@
     background-clip: text;
 }
 
+hr.linear-gradient {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(45deg,#f7b500,#b620e0,#32c5ff);
+}
+
 .french-gradient {
     -webkit-text-fill-color: transparent;
     background: linear-gradient(120deg,#000091,#ffffff,#e1000f);
     -webkit-background-clip: text;
     background-clip: text;
 }
+
