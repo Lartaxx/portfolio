@@ -54,11 +54,11 @@
 
   <hr class="h-px my-8 linear-gradient border-0 w-3/4 mx-auto">
 
-  <section class="projects">
+  <section class="projects p-4">
     <div class="flex justify-center">
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         @foreach($projects as $project)
-          <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800 max-w-sm">
+          <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800 max-w-sm">
             <div class="aspect-w-3 aspect-h-2 w-full">
               <img class="object-cover object-center w-full h-full rounded-t-lg" src="{{ Vite::image($project["image"]) }}" alt="{{ $project["name"] }}">
             </div>
@@ -78,7 +78,7 @@
                 @endforeach
               </div>
             </div>
-          </a>
+          </div>
         @endforeach
       </div>
     </div>
