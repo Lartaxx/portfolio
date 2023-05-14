@@ -29,7 +29,7 @@
             <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Github</a>
+            <a href="https://github.com/Lartaxx/" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Github</a>
           </li>
         </ul>
       </div>
@@ -68,13 +68,13 @@
               <hr class="h-px linear-gradient border-0 w-3/4 mx-auto">
               <div class="flex text-xs text-gray-500 mt-3">
                 @foreach($project["skills"] as $skill)
-                <div class="me-2">
-                  <img data-tooltip-target="tooltip-{{ $skill }}" data-tooltip-placement="bottom" data-tooltip-style="light" src="{{ Vite::image("$skill.png") }}" class="h-8 grayscale hover:grayscale-0">
-                  <div id="tooltip-{{ $skill }}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
-                    {{ $skill }}
-                    <div class="tooltip-arrow" data-popper-arrow></div>
-                  </div>  
-                </div>
+                  <div class="me-2">
+                    <img data-tooltip-target="tooltip-{{ $skill }}" data-tooltip-placement="bottom" data-tooltip-style="light" src="{{ Vite::image("$skill.png") }}" class="h-8 grayscale hover:grayscale-0">
+                    <div id="tooltip-{{ $skill }}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
+                      {{ $skill }}
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>  
+                  </div>
                 @endforeach
               </div>
             </div>
