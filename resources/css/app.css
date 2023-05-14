@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    transition: all 0.5s ease;
+}
+
 .linear-gradient {
     -webkit-text-fill-color: transparent;
     background: linear-gradient(45deg,#f7b500,#b620e0,#32c5ff);
@@ -23,4 +27,3 @@ hr.linear-gradient {
     -webkit-background-clip: text;
     background-clip: text;
 }
-

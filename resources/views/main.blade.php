@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-slate-900 font-poppins">
+<body class="bg-gray-900 font-poppins">
     
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
+<nav class="bg-white border-gray-200 dark:bg-gray-900 ">
     <div class="ms-2 me-2 flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="https://flowbite.com/" class="flex items-center">
+      <a href="#" class="flex items-center">
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">lartaxx.dev</span>
       </a>
       <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
@@ -35,9 +36,9 @@
     </div>
   </nav>
 
-  <div class="container">
+  <section class="about">
 
-    <div class="text-center text-white">
+    <div class="text-center text-white mx-auto">
         <h1 class="text-4xl font-bold">Hi, I'm Lartaxx 👋!</h1>
         <p class="text-6xl mt-5 font-semibold">
             Back-end web
@@ -49,10 +50,38 @@
         </p>
     </div>
 
-    <hr class="h-px my-8 linear-gradient border-0 w-3/4 mx-auto">
+  </section>
 
+  <hr class="h-px my-8 linear-gradient border-0 w-3/4 mx-auto">
 
-</div>
-@vite('resources/js/app.js')
+  <section class="projects">
+    <div class="flex justify-center">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        @foreach($projects as $project)
+          <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800 max-w-sm">
+            <div class="aspect-w-3 aspect-h-2 w-full">
+              <img class="object-cover object-center w-full h-full rounded-t-lg" src="{{ Vite::image($project["image"]) }}" alt="{{ $project["name"] }}">
+            </div>
+            <div class="flex flex-col justify-between p-4 leading-normal">
+              <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $project["name"] }}</h5>
+              <p class="mb-3 text-sm text-gray-700 dark:text-gray-400">{{ $project["description"] }}</p>
+              <hr class="h-px linear-gradient border-0 w-3/4 mx-auto">
+              <div class="flex text-xs text-gray-500 mt-3">
+                @foreach($project["skills"] as $skill)
+                <div class="me-2">
+                  <img data-tooltip-target="tooltip-{{ $skill }}" data-tooltip-placement="bottom" data-tooltip-style="light" src="{{ Vite::image("$skill.png") }}" class="h-8 grayscale hover:grayscale-0">
+                  <div id="tooltip-{{ $skill }}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
+                    {{ $skill }}
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>  
+                </div>
+                @endforeach
+              </div>
+            </div>
+          </a>
+        @endforeach
+      </div>
+    </div>
+  </section>
 </body>
 </html>

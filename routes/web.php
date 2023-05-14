@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $projects = [
+        [
+            "name" => "Beggin",
+            "description" => "Garry's Mod server pushed on the American roleplay, server totally made by our hands.",
+            "image" => "beggin.png",
+            "skills" => ["html", "css", "js", "laravel", "nodejs", "git", "expressjs"],
+        ]
+    ];
+    return view('main', compact('projects'));
 });
 
-Route::get("/test", function() {
-    return view("test");
-});
