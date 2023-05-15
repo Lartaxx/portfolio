@@ -71,7 +71,7 @@
                   <div class="me-2">
                     <img data-tooltip-target="tooltip-{{ $skill }}" data-tooltip-placement="bottom" data-tooltip-style="light" src="{{ Vite::image("$skill.png") }}" class="h-8 grayscale hover:grayscale-0">
                     <div id="tooltip-{{ $skill }}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
-                      {{ $skill }}
+                      {{ Utils::convertSkill($skill) }}
                       <div class="tooltip-arrow" data-popper-arrow></div>
                     </div>  
                   </div>
