@@ -19,13 +19,13 @@ Route::get('/', function () {
             "name" => "Beggin",
             "description" => "Garry's Mod server pushed on the American roleplay, server totally made by our hands.",
             "image" => "beggin.png",
-            "skills" => ["html", "css", "js", "laravel", "nodejs", "git", "expressjs"],
+            "skills" => ["html", "css", "bootstrap", "js", "laravel", "nodejs", "git", "expressjs"],
         ],
         [
             "name" => "Lost In The Shell",
             "description" => "Hacking trainer for the 42Perpignan school., Association of the school",
             "image" => "lis.png",
-            "skills" => ["html", "css", "js", "laravel", "nodejs", "git", "php"],
+            "skills" => ["html", "css", "bootstrap", "js", "laravel", "git", "php"],
         ],
         [
             "name" => "Convertway",

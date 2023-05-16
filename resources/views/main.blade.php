@@ -23,10 +23,7 @@
             <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+            <a href="https://www.linkedin.com/in/david-boyer-9a1120136/" target="_blank" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
           </li>
           <li>
             <a href="https://github.com/Lartaxx/" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Github</a>
@@ -54,7 +51,7 @@
 
   <hr class="h-px my-8 linear-gradient border-0 w-3/4 mx-auto">
 
-  <section class="projects p-4">
+  <section id="projects" class="p-4">
     <div class="flex justify-center">
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         @foreach($projects as $project)
@@ -65,7 +62,7 @@
             <div class="flex flex-col justify-between p-4 leading-normal">
               <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $project["name"] }}</h5>
               <p class="mb-3 text-sm text-gray-700 dark:text-gray-400">{{ $project["description"] }}</p>
-              <hr class="h-px linear-gradient border-0 w-3/4 mx-auto">
+              <hr class="h-px linear-gradient border-0 w-3/4 mb-1 mx-auto">
               <div class="flex text-xs text-gray-500 mt-3">
                 @foreach($project["skills"] as $skill)
                   <div class="me-2">
@@ -83,5 +80,27 @@
       </div>
     </div>
   </section>
+
+
+  <hr class="h-px my-2 linear-gradient border-0 w-full mx-auto mb-4">
+
+  
+<footer class="bg-white rounded-lg shadow dark:bg-gray-900">
+  <div class="mx-auto px-3 mb-2 container flex justify-between items-start">
+    <div>
+      <p class="font-medium text-blue-200 text-lg">lartaxx@beggin.fr</p>
+      <p class="font-extralight text-blue-200 opacity-70">Backend web developer</p>
+    </div>
+    <div class="text-right">
+      <p class="font-extralight text-blue-200 opacity-70">
+        Developed and Designed<br>
+        with <span class="text-pink-500">❤️</span> by lartaxx.dev
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
 </body>
 </html>

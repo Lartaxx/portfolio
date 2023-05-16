@@ -37,6 +37,11 @@ class Utils {
                 return "ExpressJS";
                 break;
             }
+
+            case "bootstrap": {
+                return "Bootstrap";
+                break;
+            }
         }
     }
 }
