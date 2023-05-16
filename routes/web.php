@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// Utils
+use App\Utils\Utils;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,26 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $projects = [
-        [
-            "name" => "Beggin",
-            "description" => "Garry's Mod server pushed on the American roleplay, server totally made by our hands.",
-            "image" => "beggin.png",
-            "skills" => ["html", "css", "bootstrap", "js", "laravel", "nodejs", "git", "expressjs"],
-        ],
-        [
-            "name" => "Lost In The Shell",
-            "description" => "Hacking trainer for the 42Perpignan school., Association of the school",
-            "image" => "lis.png",
-            "skills" => ["html", "css", "bootstrap", "js", "laravel", "git", "php"],
-        ],
-        [
-            "name" => "Convertway",
-            "description" => "Project of currency conversions, complete vision of these conversions etc.",
-            "image" => "convertway.png",
-            "skills" => ["html", "css", "js", "laravel", "git"]
-        ]
-    ];
+    $projects = Utils::getProjects();
     return view('main', compact('projects'));
 });
+
+Route::get("/projects/{project}", function($project) {
+    $project = Utils::getProject($project);
+    if (is_null($project)) {
+        return redirect("/")->with("error", "This project doesn't exist.");
+    }
+    return view("project", compact("project"));
+})->name("project");
 

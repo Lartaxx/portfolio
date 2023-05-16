@@ -1,10 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <script>
+    let Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    });
+  </script>
 </head>
 <body class="bg-gray-900 font-poppins">
     
@@ -49,18 +63,18 @@
 
   </section>
 
-  <hr class="h-px my-8 linear-gradient border-0 w-3/4 mx-auto">
+  <hr class="h-px my-2 mt-2 linear-gradient border-0 w-5/6 mx-auto">
 
   <section id="projects" class="p-4">
     <div class="flex justify-center">
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         @foreach($projects as $project)
-          <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800 max-w-sm">
+          <a href="{{ route("project", ["project" => isset($project["slug"]) ? $project["slug"] : strtolower($project["name"])]) }}" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700 dark:bg-gray-800 max-w-sm">
             <div class="aspect-w-3 aspect-h-2 w-full">
               <img class="object-cover object-center w-full h-full rounded-t-lg" src="{{ Vite::image($project["image"]) }}" alt="{{ $project["name"] }}">
             </div>
             <div class="flex flex-col justify-between p-4 leading-normal">
-              <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $project["name"] }}</h5>
+              <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-blue-500">{{ $project["name"] }}</h5>
               <p class="mb-3 text-sm text-gray-700 dark:text-gray-400">{{ $project["description"] }}</p>
               <hr class="h-px linear-gradient border-0 w-3/4 mb-1 mx-auto">
               <div class="flex text-xs text-gray-500 mt-3">
@@ -75,7 +89,7 @@
                 @endforeach
               </div>
             </div>
-          </div>
+          </a>
         @endforeach
       </div>
     </div>
@@ -86,15 +100,15 @@
 
   
 <footer class="bg-white rounded-lg shadow dark:bg-gray-900">
-  <div class="mx-auto px-3 mb-2 container flex justify-between items-start">
+  <div class="px-3 mb-2  flex justify-between items-start">
     <div>
       <p class="font-medium text-blue-200 text-lg">lartaxx@beggin.fr</p>
-      <p class="font-extralight text-blue-200 opacity-70">Backend web developer</p>
+      <p class="font-extralight text-blue-200 opacity-70">Back-end web developer</p>
     </div>
     <div class="text-right">
       <p class="font-extralight text-blue-200 opacity-70">
-        Developed and Designed<br>
-        with <span class="text-pink-500">❤️</span> by lartaxx.dev
+        Developed with <span class="text-pink-500">❤️</span><br>
+        by lartaxx.dev
       </p>
     </div>
   </div>
@@ -102,5 +116,33 @@
 
 
 
+@if($errors->any())
+   @foreach ($errors->all() as $error)
+    <script>
+        Toast.fire({
+            icon: 'error',
+            title: '{{ $error }}'
+        });
+    </script>
+    @endforeach
+@endif
+
+@if(session('success'))
+    <script>
+        Toast.fire({
+            icon: 'success',
+            title: "{{ session('success') }}"
+        });
+    </script>
+@endif
+
+@if(session('error'))
+    <script>
+        Toast.fire({
+            icon: 'error',
+            title: "{{ session('error') }}"
+        });
+    </script>
+@endif
 </body>
 </html>
