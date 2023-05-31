@@ -60,12 +60,7 @@
             @endisset
         </div>
     </div>
-
     
-    
-    
-    
-
 @if($errors->any())
    @foreach ($errors->all() as $error)
     <script>
