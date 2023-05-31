@@ -23,9 +23,9 @@ Route::get('/', function () {
 
 Route::get("/projects/{project}", function($project) {
     $project = Utils::getProject($project);
-    if (is_null($project)) {
+    if (is_null($project) || !isset($project["project"])) {
         return redirect("/")->with("error", "This project doesn't exist.");
     }
-    return view("project", compact("project"));
+    return view("project", ["gradient" => $project["project"]["gradient"], "project" => $project]);
 })->name("project");
 

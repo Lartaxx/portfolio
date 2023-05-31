@@ -20,7 +20,7 @@
     });
   </script>
 </head>
-<body class="bg-gray-900 font-poppins">
+<body class="bg-gray-900 font-poppins fade-in">
     
 <nav class="bg-white border-gray-200 dark:bg-gray-900 ">
     <div class="ms-2 me-2 flex flex-wrap items-center justify-between mx-auto p-4">
@@ -50,7 +50,7 @@
   <section class="about">
 
     <div class="text-center text-white mx-auto">
-        <h1 class="text-4xl font-bold">Hi, I'm Lartaxx 👋!</h1>
+        <h1 class="text-4xl font-bold mb-10">Hi, I'm Lartaxx 👋!</h1>
         <p class="text-6xl mt-5 font-semibold">
             Back-end web
             <span class="linear-gradient">developer</span>
@@ -63,7 +63,7 @@
 
   </section>
 
-  <hr class="h-px my-2 mt-2 linear-gradient border-0 w-5/6 mx-auto">
+  <hr class="h-px my-2 mt-10 mb-10 linear-gradient border-0 w-5/6 mx-auto">
 
   <section id="projects" class="p-4">
     <div class="flex justify-center">

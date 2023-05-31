@@ -9,7 +9,11 @@ export default {
     extend: {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
-      }
+        'montserrat': ['Montserrat', 'sans-serif'],
+      },
+      gradientColorStops: {
+        'custom-gradient': ['var(--gradient-start)', 'var(--gradient-end)'],
+      },
     },
   },
   plugins: [],
