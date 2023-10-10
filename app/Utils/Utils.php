@@ -47,6 +47,11 @@ class Utils {
                 return "Tailwind";
                 break;
             }
+
+            case "nginx": {
+                return "Nginx";
+                break;
+            }
         }
     }
 
@@ -166,6 +171,44 @@ class Utils {
                     </p>",
                     "links" => [
                         "project" => "https://oveo-rp.fr/"
+                    ]
+                ]
+            ],
+            [
+                "name" => "CCAS Software",
+                "slug" => "ccas-software",
+                "description" => "Software for the CCAS of any city, to manage the bus, the workshops, the heat wave etc.",
+                "image" => "ccas.jpg",
+                "skills" => ["html", "css", "js", "laravel", "git", "php", "nginx"],
+                "project" => [
+                    "gradient" => "#0077B5, #00BFFF",
+                    "description" => "
+                    <p class='mb-2'>Our state-of-the-art CCAS Management Software goes beyond mere operational streamlining—it's about optimizing every facet of your services. Dive into the specialized modules tailor-made for enhancing your community service deliverables:</p>
+
+                    <h3 class='mb-2'>1. BUS Module: Personalized and Efficient Transit Management</h3>
+                    <ul>
+                        <li class='mb-2'><strong>Customizable Routes:</strong> Adapt each route according to specific requirements, be it for regular commutes or one-off events, ensuring every community member's transit needs are met.</li>
+                        <li class='mb-2'><strong>Full-scale Management:</strong> Oversee the entirety of the bus service operations—from scheduling to on-the-go route modifications, ensuring services remain timely and reliable.</li>
+                        <li class='mb-2'><strong>SMS Alerts:</strong> Automatically send out SMS notifications for any route changes, ensuring passengers are always kept in the loop.</li>
+                    </ul>
+                    
+                    <h3 class='mb-2'>2. Plan Canicule Module: Prioritizing the Well-being of the Vulnerable</h3>
+                    <ul>
+                        <li class='mb-2'><strong>Manage Vulnerable Demographics:</strong> Keep a thorough record of community members at risk during environmental extremities, especially during heatwaves.</li>
+                        <li class='mb-2'><strong>SMS Alerts:</strong> Deploy automated SMS warnings and guidelines during adverse conditions, ensuring every at-risk individual stays safe and well-informed.</li>
+                    </ul>
+                    
+                    <h3 class='mb-2'>3. Ateliers Module: Seamless Workshop Administration</h3>
+                    <ul>
+                        <li class='mb-2'><strong>Workshop Directory:</strong> Manage diverse workshops, be it recreational or educational, with a comprehensive administrative panel.</li>
+                        <li class='mb-2'><strong>Registration Simplified:</strong> Allow community members to register for workshops seamlessly, keeping a transparent record of participants for every session.</li>
+                        <li class='mb-2'><strong>SMS Notifications:</strong> Employ the integrated SMS system to relay important updates, reminders, or last-minute changes about workshops, ensuring every participant stays updated.</li>
+                    </ul>
+                    
+                    <p>Empower your social services with our CCAS Management Software—a blend of modern technology, user-centric design, and community-focused modules.</p>
+                    ",
+                    "links" => [
+                        "more_informations" => "mailto:contact@intersoft.fr"
                     ]
                 ]
             ]
