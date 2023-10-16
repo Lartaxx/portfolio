@@ -56,7 +56,7 @@ class Utils {
     }
 
     public static function getProjects() {
-        return [
+        $projects =  [
             [
                 "name" => "Beggin",
                 "description" => "Garry's Mod server pushed on the American roleplay, server totally made by our hands.",
@@ -78,7 +78,8 @@ class Utils {
                     <p>Join us now on Beggin and discover the difference of a Garry's Mod server made by passionate people. Immerse yourself in our innovative world, explore unique features, and let yourself be carried away by a tailor-made gaming experience. We look forward to welcoming you and sharing our passion for Garry's Mod with you.</p>",
                     "links" => [
                         "project" => "https://beggin.fr",
-                    ]
+                    ],
+                    "date" => "2021-09-01"
                 ]
             ],
             [
@@ -110,7 +111,8 @@ class Utils {
                     </p>",
                     "links" => [
                         "github" => "https://github.com/Lartaxx/42_LIS_organization"
-                    ]
+                    ],
+                    "date" => "2023-05-01"
                 ]
             ],
             [
@@ -149,7 +151,8 @@ class Utils {
                     </p>",
                     "links" => [
                         "github" => "https://github.com/Lartaxx/convertway",
-                    ]   
+                    ],
+                    "date" => "2020-01-01"   
                 ]
             ],
             [
@@ -171,7 +174,8 @@ class Utils {
                     </p>",
                     "links" => [
                         "project" => "https://oveo-rp.fr/"
-                    ]
+                    ],
+                    "date" => "2023-06-01"
                 ]
             ],
             [
@@ -209,10 +213,36 @@ class Utils {
                     ",
                     "links" => [
                         "more_informations" => "mailto:contact@intersoft.fr"
-                    ]
+                    ],
+                    "date" => "2023-09-01"
+                ]
+            ],
+            [
+                "name" => "Travaux | Row-Hosting",
+                "slug" => "travaux-row-hosting",
+                "description" => "Website of the Row-Hosting company, a company that offers hosting services.",
+                "image" => "row-hosting.png",
+                "skills" => ["html", "css", "js", "laravel", "git", "php", "expressjs"],
+                "project" => [
+                    "gradient" => "#9e1f5e,#4F33B8",
+                    "description" => "
+                    <p class='text-xl mb-2'>Row-Hosting 'Travaux' Project</p>
+                    <p>Row-Hosting introduces the 'Travaux' project - a dedicated dashboard providing real-time status updates on all connected machines within the hosting network. Stay informed with the latest 10 updates, be it issues, enhancements, or maintenance activities.</p>
+                    <p>Notably, an <strong>API, crafted with ExpressJS</strong>, has been developed to monitor the ping status of linked machines, ensuring seamless connectivity insights.</p>
+                    <p>For ease of task management, a unique <strong>Discord login integration</strong> has been set up. This integration facilitates the addition and categorization of tasks such as Incidents, Updates, Maintenance, and more. Moreover, it streamlines the process of modifying task details, including tracking its progression.</p>
+                    ",
+                    "links" => [
+                        "project" => "https://travaux.row-hosting.fr"
+                    ],
+                    "date" => "2022-12-01"
                 ]
             ]
         ];
+
+        usort($projects, function($a, $b) {
+            return strtotime($b["project"]["date"]) - strtotime($a["project"]["date"]);
+        });
+        return $projects;
     }
 
     public static function getProject($project) {

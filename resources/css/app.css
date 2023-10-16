@@ -19,6 +19,14 @@
     background-clip: text;
 }
 
+.text-decoration-gradient {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    border-image: linear-gradient(45deg,#f7b500,#b620e0,#32c5ff);
+    border-image-slice: 1;
+    border-width: 0 0 2px;
+}
+
 hr.linear-gradient {
     -webkit-text-fill-color: transparent;
     background: linear-gradient(45deg,#f7b500,#b620e0,#32c5ff);
@@ -40,3 +48,17 @@ hr.linear-gradient {
     100% { opacity: 1; }
 }
 
+.drawing-effect path {
+    stroke-dasharray: 200; 
+    stroke-dashoffset: 200;
+    animation: draw 5s infinite alternate; /* 'alternate' va jouer l'animation en avant, puis en arrière */
+}
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 200;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

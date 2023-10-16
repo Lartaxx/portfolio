@@ -14,6 +14,9 @@ export default {
       gradientColorStops: {
         'custom-gradient': ['var(--gradient-start)', 'var(--gradient-end)'],
       },
+      textDecoration: {
+        'gradient': 'linear-gradient(45deg,#f7b500,#b620e0,#32c5ff)'
+      },
     },
   },
   plugins: [],

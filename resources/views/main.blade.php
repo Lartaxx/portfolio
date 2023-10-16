@@ -65,9 +65,25 @@
 
   </section>
 
-  <hr class="h-px my-2 mt-10 mb-10 linear-gradient border-0 w-5/6 mx-auto">
+  <hr class="h-px my-2 mt-10 mb-5 linear-gradient border-0 w-5/6 mx-auto">
 
   <section id="projects" class="p-4">
+    <div class="flex items-center justify-center text-center mb-10">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 me-2 drawing-effect">
+          <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#f7b500" />
+                  <stop offset="50%" style="stop-color:#b620e0" />
+                  <stop offset="100%" style="stop-color:#32c5ff" />
+              </linearGradient>
+          </defs>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke="url(#gradient)" fill="none" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+      </svg>
+      <span class="text-4xl font-bold linear-gradient text-decoration-gradient mr-4">Discover my projects</span>
+  </div>
+  
+  
+  
     <div class="flex justify-center">
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         @foreach($projects as $project)
